@@ -674,43 +674,8 @@
       }
     } ],
     "defaultClientScopes" : [ "web-origins", "acr", "aspnet-keycloak-scope", "roles", "profile", "email" ],
-    "optionalClientScopes" : [ "address", "phone", "offline_access", "microprofile-jwt" ],
-    "authorizationSettings" : {
-      "allowRemoteResourceManagement" : true,
-      "policyEnforcementMode" : "ENFORCING",
-      "resources" : [ {
-        "name" : "Default Resource",
-        "type" : "urn:aspnet-keycloak:resources:default",
-        "ownerManagedAccess" : false,
-        "attributes" : { },
-        "_id" : "5a0bfef3-a0ef-4910-9b3d-ca60912736a5",
-        "uris" : [ "/*" ]
-      } ],
-      "policies" : [ {
-        "id" : "269f636c-d431-4c4b-9bc0-778ed23bcf50",
-        "name" : "Default Policy",
-        "description" : "A policy that grants access only for users within this realm",
-        "type" : "js",
-        "logic" : "POSITIVE",
-        "decisionStrategy" : "AFFIRMATIVE",
-        "config" : {
-          "code" : "// by default, grants any permission associated with this policy\n$evaluation.grant();\n"
-        }
-      }, {
-        "id" : "72157c02-d9bb-43b9-b17d-7302e450bfed",
-        "name" : "Default Permission",
-        "description" : "A permission that applies to the default resource type",
-        "type" : "resource",
-        "logic" : "POSITIVE",
-        "decisionStrategy" : "UNANIMOUS",
-        "config" : {
-          "defaultResourceType" : "urn:aspnet-keycloak:resources:default",
-          "applyPolicies" : "[\"Default Policy\"]"
-        }
-      } ],
-      "scopes" : [ ],
-      "decisionStrategy" : "UNANIMOUS"
-    }
+    "optionalClientScopes" : [ "address", "phone", "offline_access", "microprofile-jwt" ]
+
   }, {
     "id" : "b584985a-3dcb-4645-95bb-26f68e9a50d4",
     "clientId" : "broker",
